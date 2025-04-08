@@ -18,6 +18,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 
 #  Install `pipenv` globally
 RUN pip install pipenv
+RUN pnpm install -g astro
 
 #  Use the same path as `workspaceFolder` in `devcontainer.json`
 WORKDIR /workspaces/${localWorkspaceFolderBasename}
