@@ -10,7 +10,7 @@ from backend.models import db
 from backend.routes import api
 from backend.admin import setup_admin
 from backend.commands import setup_commands
-from flask_jwt_extended import JWTManager
+# from flask_jwt_extended import JWTManager
 
 # from models import Person
 
@@ -21,9 +21,9 @@ app = Flask(__name__)
 app.url_map.strict_slashes = False
 
 
-#jwt configuration
-app.config["JWT_SECRET_KEY"] = "LA_VIDA##ES$MUY^^favorabLE*1985"
-jwt = JWTManager(app)
+# #jwt configuration
+# app.config["JWT_SECRET_KEY"] = "LA_VIDA##ES$MUY^^favorabLE*1985"
+# jwt = JWTManager(app)
 
 
 
