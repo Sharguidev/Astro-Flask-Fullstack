@@ -21,10 +21,10 @@ wtforms = "==3.0.1"
 eralchemy2 = "*"
 
 [requires]
-python_version = "3.13"
+python_version = "3.12.3"
 
 [scripts]
-start="flask run -p 3000 -h 0.0.0.0"
+start="pipenv run flask run -p 3000 -h 0.0.0.0"
 init="flask db init"
 migrate="flask db migrate"
 upgrade="flask db upgrade"

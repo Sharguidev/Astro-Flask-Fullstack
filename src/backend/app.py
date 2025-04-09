@@ -7,7 +7,7 @@ from flask_migrate import Migrate
 from flask_swagger import swagger
 from flask_cors import CORS
 from backend.utils import APIException, generate_sitemap
-from admin import setup_admin
+from .admin import setup_admin
 from backend.models import db, User
 #from models import Person
 
