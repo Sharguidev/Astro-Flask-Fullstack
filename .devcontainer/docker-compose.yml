@@ -7,10 +7,12 @@ services:
       dockerfile: .devcontainer/Dockerfile
     volumes:
       - ../..:/workspaces:cached
+      - ../../src/frontend:/workspaces/guidev-portfolio/frontend
+      - ../../src/backend:/workspaces/guidev-portfolio/backend
     working_dir: /workspaces/guidev-portfolio
     ports:
       - "3000:3000" # Astro
-      - "5000:5000" # Flask
+      - "5431:5432" # Flask
     depends_on:
       - db
     environment:
