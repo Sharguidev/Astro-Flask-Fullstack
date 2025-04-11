@@ -3,7 +3,7 @@ import "./../../css/login.css";
 ---
 
 <div class="container-login">
-  <form id="login-form">
+  <form id="login-form" onsubmit="handleSubmit()">
     <h1 class="text-center mb-3">Let's Rock 🎸</h1>
     <div class="form-floating mb-3">
       <input
@@ -48,9 +48,7 @@ import "./../../css/login.css";
 
   // funcion para gestionar la visibiliadad de la contraseña
   function togglePasswordVisibility() {
-    const passwordInput = document.getElementById(
-      "floatingPassword"
-    ) as HTMLInputElement;
+    const passwordInput = document.getElementById("pass") as HTMLInputElement;
     const toggleButton = document.querySelector(
       ".toggle-password"
     ) as HTMLElement;
@@ -65,8 +63,6 @@ import "./../../css/login.css";
       }
     }
   }
-
-  import { showToast } from "./../../utils/toast";
 
   const handleSubmit: () => void = () => {
     const BACKEND_URL = `${import.meta.env.BACKEND_URL || "http://127.0.0.1:3001"}`;
@@ -89,17 +85,16 @@ import "./../../css/login.css";
         });
 
         if (response.ok) {
-          showToast(`Bienvenido ${username} 🚀`, "success");
-          window.location.href = "/home";
+          alert(`Bienvenido ${username} 🚀`);
+          // window.location.href = "/home";
         } else {
-          showToast("Credenciales incorrectas 👎", "error");
+          alert("Credenciales incorrectas 👎");
         }
       } catch (error) {
-        showToast("Error de conexión con el servidor", "error");
+        console.log("Error de conexión con el servidor", error);
       }
     });
   };
-
   window.togglePasswordVisibility = togglePasswordVisibility;
   window.handleSubmit = handleSubmit;
 </script>
