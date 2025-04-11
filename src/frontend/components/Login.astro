@@ -1,20 +1,65 @@
 ---
- import "./../../css/login.css";
+import "./../../css/login.css";
 ---
 
-    <div class="container-login">
-        <form>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+<div class="container-login">
+  <form>
+    <h1 class="text-center mb-3">Let's Rock 🎸</h1>
+    <div class="form-floating mb-3">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="name@example.com"
+      />
+      <label for="floatingInput">Email address</label>
     </div>
-   
+    <div class="form-floating">
+      <input
+        type="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Password"
+      />
+      <label for="floatingPassword">Password</label>
+      <button
+        type="button"
+        class="toggle-password"
+        onclick="togglePasswordVisibility()"
+        aria-label="Toggle Password Visibility"
+      >
+        👁️
+      </button>
+    </div>
+
+    <button type="submit" class="btn mt-4">Let's Go 😎</button>
+  </form>
+</div>
+
+<script>
+  declare global {
+    interface Window {
+      togglePasswordVisibility: () => void;
+    }
+  }
+
+  function togglePasswordVisibility() {
+    const passwordInput = document.getElementById(
+      "floatingPassword"
+    ) as HTMLInputElement;
+    const toggleButton = document.querySelector(
+      ".toggle-password"
+    ) as HTMLElement;
+
+    if (passwordInput) {
+      const isPassword = passwordInput.type === "password";
+      passwordInput.type =
+        passwordInput.type === "password" ? "text" : "password";
+
+      if (toggleButton) {
+        toggleButton.innerHTML = isPassword ? "🙈" : "👁️";
+      }
+    }
+  }
+  window.togglePasswordVisibility = togglePasswordVisibility;
+</script>
