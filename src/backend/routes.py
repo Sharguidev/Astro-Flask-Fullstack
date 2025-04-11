@@ -32,9 +32,11 @@ def login():
     password = data.get('password')
 
     if username == None or password == None:
-        return jsonify({"error": "Houston we've got a problem, it seems that you forgot to enter your email or password"}), 400
+        return jsonify({"error": "Houston we've got a problem, it seems that you forgot to enter your username or password"}), 400
     
     user = User.query.filter_by(username=username).first()
 
     if user is None:
         return jsonify({"error": "Houston we've got a problem, the person doesn't exist"}), 400
+    elif user.password == password and user.username == username:
+        return jsonify({"message": "Houston we are good to go"}), 200
