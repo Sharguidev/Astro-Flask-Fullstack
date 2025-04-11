@@ -42,6 +42,7 @@ import "./../../css/login.css";
   declare global {
     interface Window {
       togglePasswordVisibility: () => void;
+      handleSubmit: () => void;
     }
   }
 
@@ -65,57 +66,40 @@ import "./../../css/login.css";
     }
   }
 
-  import Toastify from "toastify-js/";
-  import "toastify-js/src/toastify.css";
+  import { showToast } from "./../../utils/toast";
 
-  const BACKEND_URL = `${import.meta.env.BACKEND_URL || "http://127.0.0.1:3001"}`;
-  const form = document.getElementById("login-form") as HTMLFormElement;
+  const handleSubmit: () => void = () => {
+    const BACKEND_URL = `${import.meta.env.BACKEND_URL || "http://127.0.0.1:3001"}`;
+    const form = document.getElementById("login-form") as HTMLFormElement;
 
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
 
-    const username = (document.getElementById("username") as HTMLInputElement)
-      .value;
-    const password = (document.getElementById("pass") as HTMLInputElement)
-      .value;
-    try {
-      const response = await fetch(`${BACKEND_URL}/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-      });
+      const username = (document.getElementById("username") as HTMLInputElement)
+        .value;
+      const password = (document.getElementById("pass") as HTMLInputElement)
+        .value;
+      try {
+        const response = await fetch(`${BACKEND_URL}/login`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
+        });
 
-      if (response.ok) {
-        Toastify({
-          text: "Login successful!🚀",
-          duration: 3000,
-          gravity: "top",
-          position: "center",
-          backgroundColor: "#000",
-        }).showToast();
-        window.location.href = "/home";
-      } else {
-        Toastify({
-          text: "Login failed. Please check your credentials.👎",
-          duration: 3000,
-          gravity: "top",
-          position: "center",
-          backgroundColor: "#000",
-        }).showToast();
+        if (response.ok) {
+          showToast(`Bienvenido ${username} 🚀`, "success");
+          window.location.href = "/home";
+        } else {
+          showToast("Credenciales incorrectas 👎", "error");
+        }
+      } catch (error) {
+        showToast("Error de conexión con el servidor", "error");
       }
-    } catch (error) {
-      console.error("Error during login:", error);
-      Toastify({
-        text: "An error occurred. Please try again later.",
-        duration: 3000,
-        gravity: "top",
-        position: "center",
-        backgroundColor: "#000",
-      }).showToast();
-    }
-  });
+    });
+  };
 
   window.togglePasswordVisibility = togglePasswordVisibility;
+  window.handleSubmit = handleSubmit;
 </script>
