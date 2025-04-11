@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Patrick+Hand&display=swap');
+
+body{
+    font-family: "Inter", sans-serif;
+}
+
+.container-login{
+
+    width: 30%;
+    padding: 40px;
+    margin-left: 50%;
+    margin-top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: -4px 1px 39px 3px rgba(52,78,65,0.8);
+    -webkit-box-shadow: -4px 1px 39px 3px rgba(52,78,65,0.8);
+    -moz-box-shadow: -4px 1px 39px 3px rgba(52,78,65,0.8);
+    border-radius: 20px;
+    
+}
+
