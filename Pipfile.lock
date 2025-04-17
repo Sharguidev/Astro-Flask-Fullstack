@@ -5,7 +5,7 @@
     },
     "pipfile-spec": 6,
     "requires": {
-      "python_version": "3.11"
+      "python_version": "3.11.0"
     },
     "sources": [
       {
@@ -21,7 +21,7 @@
         "sha256:1c72391bbdeffccfe317eefba686cb9a3c078005478885413b95c3b26c57a8a7",
         "sha256:2e76bd916d547f6900ec4bb5a90aeac1485d2c92536923d0b138c02b126edc53"
       ],
-      "markers": "python_version > '3.9'",
+      "markers": "python_version >= '3.9'",
       "version": "==1.15.2"
     },
     "blinker": {
@@ -29,7 +29,7 @@
         "sha256:b4ce2265a7abece45e7cc896e98dbebe6cead56bcf805a3d23136d145f5445bf",
         "sha256:ba0efaa9080b619ff2f3459d1d500c57bddea4a6b424b60a91141db6fd2f08bc"
       ],
-      "markers": "python_version > '3.9'",
+      "markers": "python_version >= '3.9'",
       "version": "==1.9.0"
     },
     "click": {
@@ -37,7 +37,7 @@
         "sha256:63c132bbbed01578a06712a2d1f497bb62d9c1c0d329b7903a866228027263b2",
         "sha256:ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
       ],
-      "markers": "python_version > '3.7'",
+      "markers": "python_version >= '3.7'",
       "version": "==8.1.8"
     },
     "eralchemy2": {
@@ -46,7 +46,7 @@
         "sha256:be3ecd4e696172fe4b439a3010b08564c6f7c7323b9e9b4369e47da7a7b48428"
       ],
       "index": "pypi",
-      "markers": "python_version > '3.8'",
+      "markers": "python_version >= '3.8'",
       "version": "==1.4.1"
     },
     "flask": {
@@ -55,7 +55,7 @@
         "sha256:d667207822eb83f1c4b50949b1623c8fc8d51f2341d65f72e1a1815397551136"
       ],
       "index": "pypi",
-      "markers": "python_version > '3.9'",
+      "markers": "python_version >= '3.9'",
       "version": "==3.1.0"
     },
     "flask-admin": {
@@ -64,7 +64,7 @@
         "sha256:fd8190f1ec3355913a22739c46ed3623f1d82b8112cde324c60a6fc9b21c9406"
       ],
       "index": "pypi",
-      "markers": "python_version > '3.6'",
+      "markers": "python_version >= '3.6'",
       "version": "==1.6.1"
     },
     "flask-cors": {
@@ -73,7 +73,7 @@
         "sha256:fa5cb364ead54bbf401a26dbf03030c6b18fb2fcaf70408096a572b409586b0c"
       ],
       "index": "pypi",
-      "markers": "python_version > '3.9' and python_version < '4.0'",
+      "markers": "python_version >= '3.9' and python_version < '4.0'",
       "version": "==5.0.1"
     },
     "flask-migrate": {
@@ -82,7 +82,7 @@
         "sha256:d3f437a8b5f3849d1bb1b60e1b818efc564c66e3fefe90b62e5db08db295e1b1"
       ],
       "index": "pypi",
-      "markers": "python_version > '3.6'",
+      "markers": "python_version >= '3.6'",
       "version": "==4.0.5"
     },
     "flask-sqlalchemy": {
@@ -91,7 +91,7 @@
         "sha256:e4b68bb881802dda1a7d878b2fc84c06d1ee57fb40b874d3dc97dabfa36b8312"
       ],
       "index": "pypi",
-      "markers": "python_version > '3.8'",
+      "markers": "python_version >= '3.8'",
       "version": "==3.1.1"
     },
     "flask-swagger": {

@@ -22,7 +22,7 @@ eralchemy2 = "*"
 pyjwt = "*"
 
 [requires]
-python_version = "3.11"
+python_version = "3.11.0"
 
 [scripts]
 start="flask run -p 3001 -h 0.0.0.0"
